@@ -1,10 +1,4 @@
 Create Schema `hockeydb`;
 Create Table `hockeydb`.`Master` (playerID varchar(30), coachID varchar(30), hofID varchar(30), firstName varchar(30), lastName varchar(30), nameNote varchar(30), nameGiven varchar(30), nameNick varchar(30), height varchar(30), weight varchar(30), shootCatch varchar(30), legendsID varchar(30), ihdbID varchar(30), hrefID varchar(30), firstNHL varchar(30), lastNHL varchar(30), firstWHA varchar(30), lastWHA varchar(30), pos varchar(30), birthYear varchar(30), birthMon varchar(30), birthDay varchar(30), birthCountry varchar(30), birthState varchar(30), birthCity varchar(30), deathYear varchar(30), deathMon varchar(30), deathDay varchar(30), deathCountry varchar(30), deathState varchar(30), deathCity varchar(30), PRIMARY KEY (`playerID`,`coachID`,`hofID`,`firstName`,`lastName`));
-Create Table `hockeydb`.`AwardsPlayers` (playerID varchar(30), award varchar(30), year varchar(30), lgID varchar(30), note varchar(30), pos varchar(30), PRIMARY KEY (`playerID`, `award`,`year`,`lgID`), FOREIGN KEY (`playerID`)
-    REFERENCES `hockeydb`.`master` (`playerID`)
-    ON DELETE RESTRICT
-    ON UPDATE CASCADE);
-Create Table `hockeydb`.`Coaches` (coachID varchar(30), year varchar(30), tmID varchar(30), lgID varchar(30), stint varchar(30), notes varchar(30), g varchar(30), w varchar(30), l varchar(30), t varchar(30), postg varchar(30), postw varchar(30), postl varchar(30), postt varchar(30), PRIMARY KEY (`coachID`, `year`), FOREIGN KEY (`coachID`)
-    REFERENCES `hockeydb`.`master` (`coachID`)
-    ON DELETE RESTRICT
-    ON UPDATE CASCADE);
+Create Table `hockeydb`.`AwardsPlayers` (playerID varchar(30), award varchar(30), year varchar(30), lgID varchar(30), note varchar(30), pos varchar(30), PRIMARY KEY (`playerID`, `award`,`year`,`lgID`));
+Create Table `hockeydb`.`Coaches` (coachID varchar(30), year varchar(30), tmID varchar(30), lgID varchar(30), stint varchar(30), notes varchar(30), g varchar(30), w int, l varchar(30), t varchar(30), postg varchar(30), postw varchar(30), postl varchar(30), postt varchar(30), PRIMARY KEY (`coachID`, `year`));

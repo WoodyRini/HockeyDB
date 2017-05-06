@@ -11,7 +11,7 @@ A Python file to create mySQL Schemas for any customized set of tables from a da
 6) Add your key contraints and not nulls as you see fit
 7) Run the script in mySQL to create your Schema and Tables!
 
-Future functionality: Read the entire table in, profile the data in python, and make type and character length recommendations based on that?
+Future functionality: Read the entire table in, profile the data in python, and make type and character length recommendations based on that? This would be critical to resolve bugs for example, sorting by # of wins, because as a character wins will be sorted differently!!
 
 """
 
