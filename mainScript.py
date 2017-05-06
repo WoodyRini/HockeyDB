@@ -4,11 +4,13 @@ from mysql.connector import Error
  
 def main():
     """ Connect to MySQL database """
+    ## draws password from a local text file.
     pw = open('password.txt','r').readline()
     storedProcResults = []
     queryResults = []
+    ## Find the results of these queries in the output.txt file as created below.
     outfile = open('output.txt','w')
-    ## an empty list to show python aggregation - total abelsi postseason wins - calculated at end of script.
+    ## an empty list to show python aggregation - total abelsi postseason wins - calculated at end of script. Displayed at very end of output file.
     abelsirecords = []
     abelsipostwins = 0
     
@@ -46,11 +48,13 @@ def main():
     finally:
         cursor.close()
         conn.close()
-    
+
+    ## grab the non-null win records for this coach and aggregate them with integer addition.
     for year in abelsirecords:
         if year[11] != '':
             abelsipostwins+= int(year[11])
-
+            
+## write the output to a file.
     outfile.write(str(storedProcResults))
     outfile.write(str(queryResults))
     outfile.write(str(abelsipostwins))
