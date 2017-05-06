@@ -13,7 +13,7 @@ This Repository contains the following:
 5) A query file that contains the SQL for my stored procedure and query, in case you want to use it in the mySQL workbench. 
 
 To Replicate my work, do the following:
-1) Make sure you have local mySQL setup with the python connector!
+1) Make sure you have local mySQL setup with the python connector! Clone this code to a local repository.
 2) Open the mySQL workbench, create an editor, copy the HockeyDBSchemaFile text into the editor, and run it. This should create your schema and tables. If you want to use the createSchemaFile.py code instead, you can run that and it'll generate the file for you. Just make sure to change the coach table's "w" column to int if you want accurate results for my queries.
 3) Copy the Stored procedure from Query1andStoredProc file and run the sql. This will create your stored procedure.
 4) Create a file called password.txt in the same directory as this code and as the first and only line, enter your mySQL root user password (This is to mask the password while still being able to parameterize and script the database connection in python).
